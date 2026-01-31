@@ -1,0 +1,8 @@
+Algorithm choice explanation:
+
+Rewards are continuous and bounded with a large spike at 0.
+Arm 2 has the highest mean reward and the lowest probability of zero reward,
+making it the expected best-performing arm.
+Since the reward distribution is not Bernoulli, a Beta-Bernoulli Bayesian method would not be not best without approximation.
+I think UCB1 is the best choice because it does not make many assumptions beyond boundedrewards and gives exploration a bonus.
+I can normalize the rewards by dividing by 9 so they fit the standard UCB1 assumptions in [0,1].
